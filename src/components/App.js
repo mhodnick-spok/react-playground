@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import TeamList from './TeamList'
 import TeamDetails from './TeamDetails'
+import Stats from './Stats'
 
 class App extends Component {
     render() {
         return <div>
-            <p>hello</p>
+            <div><Stats /></div>
+            <hr />
             <div><TeamList /></div>
-            <hr/>
+            <hr />
             <div><TeamDetails /></div>
         </div>
     }

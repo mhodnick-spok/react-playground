@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import teamClicked from './../actions/teamClicked'
+import { teamClicked } from './../actions/actions'
 
 class TeamList extends Component {
     render() {

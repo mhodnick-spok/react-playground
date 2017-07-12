@@ -6,9 +6,16 @@
 //   //return { type: 'team-clicked', team }
 // }
 
-export default (team) => {
+export function teamClicked (team) {
     return {
         type: 'team-clicked',
         team
+    }
+}
+
+export function randomize(player){
+    return {
+        type: 'randomize',
+        player
     }
 }
