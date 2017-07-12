@@ -2,11 +2,11 @@ import * as faker from 'faker'
 
 const initialState = { teams: getTeams(), selectedTeam: null };
 
-export default (state = initialState, action) => {
+export default (state = initialState, action, anything) => {
     switch(action.type) {
         case 'team-clicked':
             console.log('team-clicked action', action);
-            return Object.assign({}, state);
+            return Object.assign({}, state, {selectedTeam: action.team});
         default:
             return state;
     }

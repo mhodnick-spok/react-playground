@@ -30,7 +30,7 @@ function mapStateToProps(state) {
 // Map Redux actions to component props
 function mapDispatchToProps(dispatch) {
   return {
-    teamClick: () => dispatch(teamClicked)
+    teamClick: (team) => dispatch(teamClicked(team))
   }
 }
 
