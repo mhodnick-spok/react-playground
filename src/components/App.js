@@ -5,7 +5,7 @@ class App extends Component {
     render() {
         return <div>
             <p>hello</p>
-            <div><TeamList teams={this.state.teams} /></div>
+            <div><TeamList /></div>
         </div>
     }
 }

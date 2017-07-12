@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import teamClicked from './../actions/teamClicked'
 
 class TeamList extends Component {
     render() {
         const teams = this.props.teams;
+        const teamClick = this.props.teamClick;
         const teamItems = teams.map((team) =>
-            <li>{team.name}</li>
+            <li key={team.id} onClick={() => teamClick(team)}>{team.name}</li>
         );
 
         return <div><ul>{teamItems}</ul></div>
@@ -14,7 +16,8 @@ class TeamList extends Component {
 }
 
 TeamList.propTypes = {
-  teams: PropTypes.array.isRequired
+  teams: PropTypes.array.isRequired,
+  teamClick: PropTypes.func.isRequired
 }
 
 // Map Redux state to component props
@@ -27,7 +30,7 @@ function mapStateToProps(state) {
 // Map Redux actions to component props
 function mapDispatchToProps(dispatch) {
   return {
-    // onIncreaseClick: () => dispatch(increaseAction)
+    teamClick: () => dispatch(teamClicked)
   }
 }
 
